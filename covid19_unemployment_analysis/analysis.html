@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>covid19_unemployment_analysis</title>
+<title>analysis</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13077,17 +13077,19 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Covid-19-Analysis---Unemployment-in-USA---by-Insurance-Claims,-Job-postings">Covid-19 Analysis - Unemployment in USA - by Insurance Claims, Job postings<a class="anchor-link" href="#Covid-19-Analysis---Unemployment-in-USA---by-Insurance-Claims,-Job-postings">&#182;</a></h1><p>In this notebook, we analyze unemployment in the USA by initial and continued Unemployment Insurance claims(PART 1), and  Average job postings(PART 2).</p>
+<h1 id="Covid-19-Analysis---Unemployment-in-the-USA---by-Insurance-Claims,-Job-postings">Covid-19 Analysis - Unemployment in the USA - by Insurance Claims, Job postings<a class="anchor-link" href="#Covid-19-Analysis---Unemployment-in-the-USA---by-Insurance-Claims,-Job-postings">&#182;</a></h1><p>In this notebook, we analyze unemployment in the USA by initial and continued Unemployment Insurance claims(PART 1), and  Average job postings(PART 2).</p>
 <p>We compare all the states, regions, and populations to the criteria mentioned above.</p>
-<h3 id="Data-source-1-:-Unemployment-Insurance-Weekly-Claims-Data">Data source 1 : <a href="https://oui.doleta.gov/unemploy/claims.asp">Unemployment Insurance Weekly Claims Data</a><a class="anchor-link" href="#Data-source-1-:-Unemployment-Insurance-Weekly-Claims-Data">&#182;</a></h3><p>This data is used in the current economic analysis of unemployment trends in USA, and each of its states. 
+<h3 id="Data-source-1-:-Unemployment-Insurance-Weekly-Claims-Data">Data source 1 : <a href="https://oui.doleta.gov/unemploy/claims.asp">Unemployment Insurance Weekly Claims Data</a><a class="anchor-link" href="#Data-source-1-:-Unemployment-Insurance-Weekly-Claims-Data">&#182;</a></h3><p>This data is used in the current economic analysis of unemployment trends in the USA, and each of its states. 
 Initial claims measure unemployment and continued weeks claimed to measure the number of people claiming unemployment benefits.</p>
 <h3 id="Data-source-2:-Average-level-of-job-postings">Data source 2: <a href="https://github.com/OpportunityInsights/EconomicTracker">Average level of job postings</a><a class="anchor-link" href="#Data-source-2:-Average-level-of-job-postings">&#182;</a></h3><p>This data is Job postings data from Burning Glass Technologies.
-It provides average level job postings by different industries like Manufacturing, financial activities, professional and business services, education and health services, leisure and hospitality.</p>
-<h3 id="Data-source-3-:-COVID-19-cases----nytimes">Data source 3 : <a href="https://github.com/nytimes/covid-19-data/blob/master/live/us-states.csv">COVID 19 cases  - nytimes</a><a class="anchor-link" href="#Data-source-3-:-COVID-19-cases----nytimes">&#182;</a></h3><p>This data will be integrated with first 2 data source to provide COVID analysis. Particulary 'cases' will be taken into consideration.
-Cases is the total number of cases of Covid-19, including both confirmed and probable.</p>
-<p>These numbers are in relation to data from January 4-31,2020.
+It provides average level job postings by different industries like Manufacturing, financial activities, professional and business services, education, and health services, leisure, and hospitality.</p>
+<p>These numbers are in comparison with data from January 4-31,2020.
 So we can get a bit of an idea about before and during the effects of the pandemic.</p>
-<p><strong>Since there are too many states to focus on , I will make a reference to Hawaii throught this analysis to showcase how COVID CASES, industry job postings and unemployment insurance claims could be related.</strong></p>
+<h3 id="Data-source-3-:-COVID-19-cases----nytimes">Data source 3 : <a href="https://github.com/nytimes/covid-19-data/blob/master/live/us-states.csv">COVID 19 cases  - nytimes</a><a class="anchor-link" href="#Data-source-3-:-COVID-19-cases----nytimes">&#182;</a></h3><p>This data will be integrated with the first data source to provide COVID analysis. Particularly 'cases' will be taken into consideration.
+Cases are the total number of cases of Covid-19, including both confirmed and probable.</p>
+<p><strong>Since there are too many states to focus on, I will refer to Hawaii throughout this analysis to showcase how COVID CASES, industry job postings, and unemployment insurance claims could be related.</strong></p>
+<p>Also, This alanysis should be considered with a grain of salt as I am not a pandemic expert.</p>
+<p>The code for this analysis can be found in <a href="https://github.com/nagarajbhat/nagarajbhat.github.io/blob/master/covid19_unemployment_analysis/analysis.ipynb">this notebook</a> , and can be viewed with nbviewer <a href="https://nbviewer.jupyter.org/urls/nagarajbhat.github.io/covid19_unemployment_analysis/analysis.ipynb">here</a> .</p>
 
 </div>
 </div>
@@ -13138,7 +13140,7 @@ So we can get a bit of an idea about before and during the effects of the pandem
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Initial-claims-vs-continued-claims-vs-Covid-19-cases-vs--population---by-region">Initial claims vs continued claims vs Covid-19 cases vs  population - by region<a class="anchor-link" href="#Initial-claims-vs-continued-claims-vs-Covid-19-cases-vs--population---by-region">&#182;</a></h2><p>DISCLAIMER: Initial and continued claims, and COVID-19 Cases have been scaled up *10 in the pie chart below because they were too small in comparison with the population.</p>
+<h2 id="Initial-claims-vs-continued-claims-vs-Covid-19-cases-vs--population---by-region">Initial claims vs continued claims vs Covid-19 cases vs  population - by region<a class="anchor-link" href="#Initial-claims-vs-continued-claims-vs-Covid-19-cases-vs--population---by-region">&#182;</a></h2><p><strong>DISCLAIMER: Initial and continued claims, and COVID-19 Cases have been scaled up *10 in the pie chart below because they were too small in comparison with the population.</strong></p>
 
 </div>
 </div>
@@ -13206,11 +13208,11 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Correlation-between-them">Correlation between them<a class="anchor-link" href="#Correlation-between-them">&#182;</a></h3><p>We can see that all 4 criteria's have high correlation between them .</p>
+<h3 id="Correlation-between-them">Correlation between them<a class="anchor-link" href="#Correlation-between-them">&#182;</a></h3><p>We can see that all 4 criteria have a high correlation between them.</p>
 <p>Although it is important to note that correlation does not automatically mean causation.</p>
 <ul>
 <li>Initial and continued claims have the highest correlation (0.96)</li>
-<li>Whereas Continued claims and cases have lesser correlation comparitively (althought still a high value of 0.85)</li>
+<li>Whereas Continued claims and cases have lesser correlation comparatively (although still a high value of 0.85)</li>
 </ul>
 
 </div>
@@ -13242,9 +13244,9 @@ if (outputEl) {{
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Initial-Claims">Initial Claims<a class="anchor-link" href="#Initial-Claims">&#182;</a></h2><h3 id="Population-and-claims-correlations">Population and claims correlations<a class="anchor-link" href="#Population-and-claims-correlations">&#182;</a></h3><p>In the first graph, we plot the correlation between population and Initial claims from each state.</p>
 <ul>
-<li>We see there is some sort of linear correlation, although we see there are lot of exceptions.</li>
-<li>For example, Georgia and North Carolina have comparable populations of just above 10 Million, yet the number of initial claims for georgia is more than twice that of North carolina.</li>
-<li>Also Texas, Florida, New York and Georgia have comparable number of Initial Claims despite stark difference in their population(range close to 20 M).</li>
+<li>We see there is some sort of linear correlation, although we see there are a lot of exceptions.</li>
+<li>For example, Georgia and North Carolina have comparable populations of just above 10 million, yet the number of initial claims for Georgia is more than twice that of North Carolina.</li>
+<li>Also Texas, Florida, New York, and Georgia have a comparable number of Initial Claims despite stark differences in their population(range close to 20 M).</li>
 <li>California has both the highest population and highest Initial Claims.</li>
 </ul>
 
@@ -13310,6 +13312,18 @@ if (outputEl) {{
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the graph below we can see that -</p>
+<ul>
+<li>States with high initial claims - California, Florida, Georgia, Texas, New York </li>
+<li>Georgia has the same amount of initial claims as compared to Florida despite having a much lower population and one-third the amount of COVID-19 cases</li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
@@ -13434,7 +13448,11 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Continued-Claims">Continued Claims<a class="anchor-link" href="#Continued-Claims">&#182;</a></h2>
+<h2 id="Continued-Claims">Continued Claims<a class="anchor-link" href="#Continued-Claims">&#182;</a></h2><ul>
+<li>At a glance, we can see that, compared to Initial claims where New York and Florida were at similar values, for continued claims New York is almost twice the value of Florida.</li>
+<li>Alo Florida despite having a much larger population, has lesser continued claims when compared to much lesser populated states such as Pennsylvania, Michigan, and Illinois.</li>
+</ul>
+
 </div>
 </div>
 </div>
@@ -13621,14 +13639,14 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Comparing-Continued-Claims-vs-COVID-19-Cases">Comparing Continued Claims vs COVID-19 Cases<a class="anchor-link" href="#Comparing-Continued-Claims-vs-COVID-19-Cases">&#182;</a></h2><p>Continued claims and covid-19 cases had a correlation of 0.85.</p>
-<p>For a better analysis it would be good to have states with comparable population in same group and see how COVID has affected  the continued claims in those states.</p>
-<h3 id="6.5-to-7-million-(Comparable-population)">6.5 to 7 million (Comparable population)<a class="anchor-link" href="#6.5-to-7-million-(Comparable-population)">&#182;</a></h3><p>For example, consider Massachusetts, Tennesee and Indiana, all three have a population close to 7 Million.
-But the continued cliams vary from 124K in Indiana, to 164K in Tennessee to 324k in Massachussets.</p>
+<h2 id="Comparing-Continued-Claims-vs-COVID-19-Cases">Comparing Continued Claims vs COVID-19 Cases<a class="anchor-link" href="#Comparing-Continued-Claims-vs-COVID-19-Cases">&#182;</a></h2><p>Continued claims and COVID-19 cases have a correlation of 0.85.</p>
+<p>For a better analysis, it would be good to have states with a comparable population in the same group and see how COVID has affected the continued claims in those states.</p>
+<h3 id="6.5-to-7-million-(Comparable-population)">6.5 to 7 million (Comparable population)<a class="anchor-link" href="#6.5-to-7-million-(Comparable-population)">&#182;</a></h3><p>For example, consider Massachusetts, Tennesee, and Indiana, all three have a population close to 7 Million.
+But the continued claims vary from 124K in Indiana, to 164K in Tennessee to 324k in Massachusetts.</p>
 <p>Things to note -</p>
 <ul>
-<li>For states with higher number of cases, the continued claims (of unemployment insurance) are also very high. This is an expected behaviour.</li>
-<li>Although Massachusetts has almost double the number of continued claims when compared with Tennesee for a COVID-19 cases increase of just under 20% .</li>
+<li>For states with a higher number of cases, the continued claims (of unemployment insurance) are also very high. This is the expected behavior.</li>
+<li>Although Massachusetts has almost double the number of continued claims when compared with Tennesee for COVID-19 cases increase of just under 20%.</li>
 </ul>
 
 </div>
@@ -13700,14 +13718,14 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="All-States">All States<a class="anchor-link" href="#All-States">&#182;</a></h3><p>Now let us plot this graph for all states.This might give us some anaomolies that breaks away from this expected behaviour.</p>
-<p>In the plot below we can observe,there are a few states in which the number of continued claims is less than number of COVID-19 cases.For example -</p>
+<h3 id="All-States">All States<a class="anchor-link" href="#All-States">&#182;</a></h3><p>Now let us plot this graph for all states. This might give us some anomalies that break away from this expected behavior.</p>
+<p>In the plot below we can observe, there are a few states in which the number of continued claims is less than the number of COVID-19 cases. For example -</p>
 <ul>
-<li><p>Arizona - continued claims of 114k, and cases is 168k. And Florida claims is 411k, and cases is 451k. This breaks away from the pattern of claims being higher than COVID-19 cases.</p>
-<p>This can mean either 2 things ,</p>
+<li><p>Arizona - continued claims of 114k, and cases are 168k. And Florida claims are 411k, and cases are 451k. This breaks away from the pattern of claims being higher than COVID-19 cases.</p>
+<p>This can mean either 2 things,</p>
 <ul>
-<li>one - COVID-19 hasn't affected the unemployment in these states that much .</li>
-<li>or two - less people have applied for unemployment insurace claims than they should have. </li>
+<li>one - COVID-19 hasn't affected the unemployment in these states that much.</li>
+<li>or two - fewer people have applied for unemployment insurance claims than they should have. </li>
 </ul>
 </li>
 </ul>
@@ -13778,18 +13796,18 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Continued-Claims-per-COVID-19-Cases-by-States">Continued Claims per COVID-19 Cases by States<a class="anchor-link" href="#Continued-Claims-per-COVID-19-Cases-by-States">&#182;</a></h3><p>In order to find more pattern, I divided Continued Claims by COvid-19 cases, and plotted a scatter plot against States, colored by region and size is proportional to its population.</p>
+<h3 id="Continued-Claims-per-COVID-19-Cases-by-States">Continued Claims per COVID-19 Cases by States<a class="anchor-link" href="#Continued-Claims-per-COVID-19-Cases-by-States">&#182;</a></h3><p>To find more patterns, I divided Continued Claims by COvid-19 cases and plotted a scatter plot against States, colored by region and size is proportional to its population.</p>
 <p>Things to note -</p>
 <ul>
-<li><p>For some reason , value for Hawaii is too high at 32.19. Main reason can be that Hawaii has very low number of COIVD cases.</p>
-<p>one more reason could be that Hawaii economy depends heavily on tourism,and tourism industry has taken a hit during COVID-19 .More on this in part -2.</p>
+<li><p>For some reason, the value for Hawaii is too high at 32.19. The main reason can be that Hawaii has a very low number of COIVD cases.</p>
+<p>one more reason could be that the Hawaii economy depends heavily on tourism, and the tourism industry has taken a hit during COVID-19.More on this in part -2.</p>
 </li>
-<li>Population doesn't seem to have much of an affect in this, although all high values are generated by lower populated states.</li>
-<li>Some high values for Claims per cases - Hawaii, Maine,West virginia, Alaska, Montana, Oregon, New Hampshire.</li>
+<li>The population doesn't seem to have much of an effect on this, although all high values are generated by lower populated states.</li>
+<li>Some high values for Claims per case - Hawaii, Maine, West Virginia, Alaska, Montana, Oregon, New Hampshire.</li>
 </ul>
 <p>Pitfalls -</p>
 <ul>
-<li>High Claims per case doesn't necessarily mean there is high unemployment. It could just mean there are very low number of COVID cases in the state</li>
+<li>High Claims per case doesn't necessarily mean there is high unemployment. It could just mean there are a very low number of COVID cases in the state</li>
 </ul>
 
 </div>
@@ -13858,9 +13876,9 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Part-2-:Average-Job-postings">Part 2 :Average Job postings<a class="anchor-link" href="#Part-2-:Average-Job-postings">&#182;</a></h1><p>What do the values mean?</p>
-<p>The values are average job postings relative to Jan 4-32,2020 .So If the sscores are in positive there are more job postings now when compared to jan , 
-and if the scores are in negative there are less job postings comparitively</p>
+<h1 id="Part-2:Average-Job-postings">Part 2:Average Job postings<a class="anchor-link" href="#Part-2:Average-Job-postings">&#182;</a></h1><p>What do the values mean?</p>
+<p>The values are average job postings relative to Jan 4-32,2020.So If the scores are in positive there are more job postings now when compared to Jan, 
+and if the scores are in negative there are fewer job postings comparatively.</p>
 
 </div>
 </div>
@@ -13871,9 +13889,9 @@ and if the scores are in negative there are less job postings comparitively</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Correlation-between-different-industries">Correlation between different industries<a class="anchor-link" href="#Correlation-between-different-industries">&#182;</a></h2><p>If we plot a correlation matrix between different industries , we can see which industry has the most inflluence on "all industries".</p>
+<h2 id="Correlation-between-different-industries">Correlation between different industries<a class="anchor-link" href="#Correlation-between-different-industries">&#182;</a></h2><p>If we plot a correlation matrix between different industries, we can see which industry has the most influence on "all industries".</p>
 <ul>
-<li>We see that Education and health services had high correlation with all industries (0.72).</li>
+<li>We see that Education and health services had a high correlation with all industries (0.72).</li>
 <li>Whereas, professional and business services had the least correlation with all industries(0.37).</li>
 </ul>
 
@@ -13904,8 +13922,8 @@ and if the scores are in negative there are less job postings comparitively</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Timeline-of-Average-job-postings---Different-industry-comparision-(relative-to-January-4-31-2020)">Timeline of Average job postings - Different industry comparision (relative to January 4-31 2020)<a class="anchor-link" href="#Timeline-of-Average-job-postings---Different-industry-comparision-(relative-to-January-4-31-2020)">&#182;</a></h2><p>One interesting factor to note here is the effect  of lockdown , according to a report, Twenty-six U.S. states see a rise in coronavirus cases since easing up on lockdown restrictions. - <a href="https://www.thinkglobalhealth.org/article/updated-timeline-coronavirus">source</a></p>
-<p>We can also see a surge in job postings(especially leisure and hospitality) during June, July after a drop during April,May. So lockdown has an impact on the tourism industry.</p>
+<h2 id="Timeline-of-Average-job-postings---Different-industry-comparison-(relative-to-January-4-31-2020)">Timeline of Average job postings - Different industry comparison (relative to January 4-31 2020)<a class="anchor-link" href="#Timeline-of-Average-job-postings---Different-industry-comparison-(relative-to-January-4-31-2020)">&#182;</a></h2><p>One interesting factor to note here is the effect of lockdown, according to a report, Twenty-six U.S. states see a rise in coronavirus cases since easing up on lockdown restrictions. - <a href="https://www.thinkglobalhealth.org/article/updated-timeline-coronavirus">source</a></p>
+<p>We can also see a surge in job postings(especially leisure and hospitality) during June, July after a drop during April, May. So lockdown has an impact on the tourism industry.</p>
 
 </div>
 </div>
@@ -13973,14 +13991,7 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="box-plot---comparision-of-average-job-postings-value-between-different-industries">box plot - comparision of average job postings value between different industries<a class="anchor-link" href="#box-plot---comparision-of-average-job-postings-value-between-different-industries">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The high variance in values of average job postings leisure and hospitality is also seen in box plot below.</p>
+<h2 id="box-plot---comparison-of-average-job-postings-value-between-different-industries">box plot - comparison of average job postings value between different industries<a class="anchor-link" href="#box-plot---comparison-of-average-job-postings-value-between-different-industries">&#182;</a></h2><p>The high variance in values of average job postings leisure and hospitality is also seen in the box plot below.</p>
 <p>Whereas Education and health services are fairly stable during the pandemic.</p>
 
 </div>
@@ -14049,17 +14060,17 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Time-line-of-average-job-posting-for-All-Industries,-by-different-states">Time line of average job posting for All Industries, by different states<a class="anchor-link" href="#Time-line-of-average-job-posting-for-All-Industries,-by-different-states">&#182;</a></h2><p>We will also color it with different regions, to analyse if there is any pattern.</p>
-<p>Its not easy to make sense of the subplots below but we can see some patterns, things to note -</p>
+<h2 id="Timeline-of-average-job-posting-for-All-Industries,-by-different-states">Timeline of average job posting for All Industries, by different states<a class="anchor-link" href="#Timeline-of-average-job-posting-for-All-Industries,-by-different-states">&#182;</a></h2><p>We will also color it with different regions, to analyze if there is any pattern.</p>
+<p>It is not easy to make sense of the subplots below but we can see some patterns, things to note -</p>
 <ul>
-<li>Most of the states follow a similar pattern od drop during April,May and surge in June, July.</li>
+<li>Most of the states follow a similar pattern od drop during April, May, and surge in June, July.</li>
 <li>postings in Hawaii hasn't yet recovered after the drop</li>
-<li><p>Most of the states have a point where the job postings are back to "peak", and then drops back again.</p>
+<li><p>Most of the states have a point where the job postings are back to "peak" and then drop back again.</p>
 <p>Some of the examples are -</p>
 
 <pre><code>  - West Virginia, Maine  on April 17th
   - Washington on June 5
-  - Vermont, Florida , Indiana, Arizona on June 26th</code></pre>
+  - Vermont, Florida, Indiana, Arizona on June 26th</code></pre>
 </li>
 </ul>
 
@@ -14130,7 +14141,7 @@ if (outputEl) {{
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Correlation---population-vs-average-job-postings">Correlation - population vs average job postings<a class="anchor-link" href="#Correlation---population-vs-average-job-postings">&#182;</a></h1><ul>
-<li>Population doesn't seem to affect average job postings by industries</li>
+<li>The population doesn't seem to affect average job postings by industries</li>
 </ul>
 
 </div>
@@ -14199,7 +14210,7 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Average-job-postings---by-different-industries,-States">Average job postings - by different industries, States<a class="anchor-link" href="#Average-job-postings---by-different-industries,-States">&#182;</a></h2><p>Let us take a look at States which have thrived in different Industries, depite COVID-19, meaning they have a positive average job posting (compared to its own value in Jan)</p>
+<h2 id="Average-job-postings---by-different-industries,-States">Average job postings - by different industries, States<a class="anchor-link" href="#Average-job-postings---by-different-industries,-States">&#182;</a></h2><p>Let us take a look at States which have thrived in different Industries, despite COVID-19, meaning they have a positive average job posting (compared to its own value in Jan)</p>
 <ul>
 <li>All industries - New Hampshire</li>
 <li>Manufacturing - Maine, Vermont</li>
@@ -14275,11 +14286,11 @@ if (outputEl) {{
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conclusion--">Conclusion -<a class="anchor-link" href="#Conclusion--">&#182;</a></h2><p>As talked about in part 1, When we take Hawaii into consideration, we noticed that Unemployment insurance claims per covid cases was too high.</p>
+<h2 id="Conclusion--">Conclusion -<a class="anchor-link" href="#Conclusion--">&#182;</a></h2><p>As talked about in part 1, When we take Hawaii into consideration, we noticed that Unemployment insurance claims per COVID cases were too high.</p>
 <ul>
-<li>And if we take a look at job postings for leisure and hospitality industry for Hawaii it falls below -0.4 compared to Jan. </li>
-<li>And we do know that Hawaii has a heavy reliance on tourism industry. According to <a href="https://www.theguardian.com/us-news/2020/jul/26/hawaii-coronavirus-tourism-economy-impact">this article</a> by the gaurdian, Hawaii depite having avoided a COVID spike has its tourist economy shattered.</li>
-<li><strong>This tells us how COVID has an impact on the economy ,leading to decline in job postings, and increase in unemployment insurance claims in these regions</strong></li>
+<li>And if we take a look at job postings for the leisure and hospitality industry for Hawaii it falls below -0.4 compared to Jan. </li>
+<li>And we do know that Hawaii has a heavy reliance on the tourism industry. According to <a href="https://www.theguardian.com/us-news/2020/jul/26/hawaii-coronavirus-tourism-economy-impact">this article</a> by the guardian, Hawaii despite having avoided a COVID spike has its tourist economy shattered.</li>
+<li><strong>This tells us how COVID has an impact on the economy, leading to a decline in job postings, and an increase in unemployment insurance claims in these regions</strong></li>
 </ul>
 
 </div>
